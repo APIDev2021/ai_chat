@@ -1,0 +1,1796 @@
+<html lang="en"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_gj_qHa"></div><script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/inpage.js"></script><head>
+  <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+  <script type="module" src="/@vite/client"></script>
+
+  <meta charset="UTF-8">
+  <!-- Regular favicon for browsers -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- 16x16 and 32x32 favicons for various devices -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Android Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>singularry</title>
+  <style>
+    /* Critical CSS to prevent flash of unstyled content */
+    body {
+      background-color: black;
+      margin: 0;
+      color: #22c55e;
+      font-family: monospace;
+    }
+    #root {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid #22c55e;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+<style type="text/css" data-vite-dev-id="/home/runner/3330e793-5343-437e-8c48-6082b633b2ad/node_modules/@solana/wallet-adapter-react-ui/styles.css">@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.wallet-adapter-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: #512da8;
+}
+
+.wallet-adapter-button:not([disabled]):focus-visible {
+  outline-color: white;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: #1a1f2e;
+}
+
+.wallet-adapter-button[disabled] {
+  background: #404144;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.wallet-adapter-button-end-icon,
+.wallet-adapter-button-start-icon,
+.wallet-adapter-button-end-icon img,
+.wallet-adapter-button-start-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.wallet-adapter-button-end-icon {
+  margin-left: 12px;
+}
+
+.wallet-adapter-button-start-icon {
+  margin-right: 12px;
+}
+
+.wallet-adapter-collapse {
+  width: 100%;
+}
+
+.wallet-adapter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.wallet-adapter-dropdown-list {
+  position: absolute;
+  z-index: 99;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-row-gap: 10px;
+  padding: 10px;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  list-style: none;
+  background: #2c2d30;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.wallet-adapter-dropdown-list-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+
+.wallet-adapter-dropdown-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 37px;
+  color: #fff;
+}
+
+.wallet-adapter-dropdown-list-item:not([disabled]):hover {
+  background-color: #1a1f2e;
+}
+
+.wallet-adapter-modal-collapse-button svg {
+  align-self: center;
+  fill: #999;
+}
+
+.wallet-adapter-modal-collapse-button.wallet-adapter-modal-collapse-button-active svg {
+  transform: rotate(180deg);
+  transition: transform ease-in 150ms;
+}
+
+.wallet-adapter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity linear 150ms;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  overflow-y: auto;
+}
+
+.wallet-adapter-modal.wallet-adapter-modal-fade-in {
+  opacity: 1;
+}
+
+.wallet-adapter-modal-button-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 12px;
+  cursor: pointer;
+  background: #1a1f2e;
+  border: none;
+  border-radius: 50%;
+}
+
+.wallet-adapter-modal-button-close:focus-visible {
+  outline-color: white;
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: #777;
+  transition: fill 200ms ease 0s;
+}
+
+.wallet-adapter-modal-button-close:hover svg {
+  fill: #fff;
+}
+
+.wallet-adapter-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wallet-adapter-modal-container {
+  display: flex;
+  margin: 3rem;
+  min-height: calc(100vh - 6rem); /* 100vh - 2 * margin */
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .wallet-adapter-modal-container {
+      margin: 1rem;
+      min-height: calc(100vh - 2rem); /* 100vh - 2 * margin */
+  }
+}
+
+.wallet-adapter-modal-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1050;
+  max-width: 400px;
+  border-radius: 10px;
+  background: #10141f;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  flex: 1;
+}
+
+.wallet-adapter-modal-wrapper .wallet-adapter-button {
+  width: 100%;
+}
+
+.wallet-adapter-modal-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0;
+  padding: 64px 48px 48px 48px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 374px) {
+  .wallet-adapter-modal-title {
+      font-size: 18px;
+  }
+}
+
+.wallet-adapter-modal-list {
+  margin: 0 0 12px 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button {
+  font-weight: 400;
+  border-radius: 0;
+  font-size: 18px;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button-end-icon,
+.wallet-adapter-modal-list .wallet-adapter-button-start-icon,
+.wallet-adapter-modal-list .wallet-adapter-button-end-icon img,
+.wallet-adapter-modal-list .wallet-adapter-button-start-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button span {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: .6;
+}
+
+.wallet-adapter-modal-list-more {
+  cursor: pointer;
+  border: none;
+  padding: 12px 24px 24px 12px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+}
+
+.wallet-adapter-modal-list-more svg {
+  transition: all 0.1s ease;
+  fill: rgba(255, 255, 255, 1);
+  margin-left: 0.5rem;
+}
+
+.wallet-adapter-modal-list-more-icon-rotate {
+  transform: rotate(180deg);
+}
+
+.wallet-adapter-modal-middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 24px 24px;
+  box-sizing: border-box;
+}
+
+.wallet-adapter-modal-middle-button {
+  display: block;
+  cursor: pointer;
+  margin-top: 48px;
+  width: 100%;
+  background-color: #512da8;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+</style><style type="text/css" data-vite-dev-id="/home/runner/3330e793-5343-437e-8c48-6082b633b2ad/src/index.css">*, ::before, ::after {
+--tw-border-spacing-x: 0;
+--tw-border-spacing-y: 0;
+--tw-translate-x: 0;
+--tw-translate-y: 0;
+--tw-rotate: 0;
+--tw-skew-x: 0;
+--tw-skew-y: 0;
+--tw-scale-x: 1;
+--tw-scale-y: 1;
+--tw-pan-x:  ;
+--tw-pan-y:  ;
+--tw-pinch-zoom:  ;
+--tw-scroll-snap-strictness: proximity;
+--tw-gradient-from-position:  ;
+--tw-gradient-via-position:  ;
+--tw-gradient-to-position:  ;
+--tw-ordinal:  ;
+--tw-slashed-zero:  ;
+--tw-numeric-figure:  ;
+--tw-numeric-spacing:  ;
+--tw-numeric-fraction:  ;
+--tw-ring-inset:  ;
+--tw-ring-offset-width: 0px;
+--tw-ring-offset-color: #fff;
+--tw-ring-color: rgb(59 130 246 / 0.5);
+--tw-ring-offset-shadow: 0 0 #0000;
+--tw-ring-shadow: 0 0 #0000;
+--tw-shadow: 0 0 #0000;
+--tw-shadow-colored: 0 0 #0000;
+--tw-blur:  ;
+--tw-brightness:  ;
+--tw-contrast:  ;
+--tw-grayscale:  ;
+--tw-hue-rotate:  ;
+--tw-invert:  ;
+--tw-saturate:  ;
+--tw-sepia:  ;
+--tw-drop-shadow:  ;
+--tw-backdrop-blur:  ;
+--tw-backdrop-brightness:  ;
+--tw-backdrop-contrast:  ;
+--tw-backdrop-grayscale:  ;
+--tw-backdrop-hue-rotate:  ;
+--tw-backdrop-invert:  ;
+--tw-backdrop-opacity:  ;
+--tw-backdrop-saturate:  ;
+--tw-backdrop-sepia:  ;
+--tw-contain-size:  ;
+--tw-contain-layout:  ;
+--tw-contain-paint:  ;
+--tw-contain-style:  ;
+}
+
+::backdrop {
+--tw-border-spacing-x: 0;
+--tw-border-spacing-y: 0;
+--tw-translate-x: 0;
+--tw-translate-y: 0;
+--tw-rotate: 0;
+--tw-skew-x: 0;
+--tw-skew-y: 0;
+--tw-scale-x: 1;
+--tw-scale-y: 1;
+--tw-pan-x:  ;
+--tw-pan-y:  ;
+--tw-pinch-zoom:  ;
+--tw-scroll-snap-strictness: proximity;
+--tw-gradient-from-position:  ;
+--tw-gradient-via-position:  ;
+--tw-gradient-to-position:  ;
+--tw-ordinal:  ;
+--tw-slashed-zero:  ;
+--tw-numeric-figure:  ;
+--tw-numeric-spacing:  ;
+--tw-numeric-fraction:  ;
+--tw-ring-inset:  ;
+--tw-ring-offset-width: 0px;
+--tw-ring-offset-color: #fff;
+--tw-ring-color: rgb(59 130 246 / 0.5);
+--tw-ring-offset-shadow: 0 0 #0000;
+--tw-ring-shadow: 0 0 #0000;
+--tw-shadow: 0 0 #0000;
+--tw-shadow-colored: 0 0 #0000;
+--tw-blur:  ;
+--tw-brightness:  ;
+--tw-contrast:  ;
+--tw-grayscale:  ;
+--tw-hue-rotate:  ;
+--tw-invert:  ;
+--tw-saturate:  ;
+--tw-sepia:  ;
+--tw-drop-shadow:  ;
+--tw-backdrop-blur:  ;
+--tw-backdrop-brightness:  ;
+--tw-backdrop-contrast:  ;
+--tw-backdrop-grayscale:  ;
+--tw-backdrop-hue-rotate:  ;
+--tw-backdrop-invert:  ;
+--tw-backdrop-opacity:  ;
+--tw-backdrop-saturate:  ;
+--tw-backdrop-sepia:  ;
+--tw-contain-size:  ;
+--tw-contain-layout:  ;
+--tw-contain-paint:  ;
+--tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+box-sizing: border-box; /* 1 */
+border-width: 0; /* 2 */
+border-style: solid; /* 2 */
+border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+--tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+line-height: 1.5; /* 1 */
+-webkit-text-size-adjust: 100%; /* 2 */
+-moz-tab-size: 4; /* 3 */
+-o-tab-size: 4;
+   tab-size: 4; /* 3 */
+font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+font-feature-settings: normal; /* 5 */
+font-variation-settings: normal; /* 6 */
+-webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+margin: 0; /* 1 */
+line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+height: 0; /* 1 */
+color: inherit; /* 2 */
+border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+-webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-size: inherit;
+font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+color: inherit;
+text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+font-feature-settings: normal; /* 2 */
+font-variation-settings: normal; /* 3 */
+font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+
+sub {
+bottom: -0.25em;
+}
+
+sup {
+top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+text-indent: 0; /* 1 */
+border-color: inherit; /* 2 */
+border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+font-family: inherit; /* 1 */
+font-feature-settings: inherit; /* 1 */
+font-variation-settings: inherit; /* 1 */
+font-size: 100%; /* 1 */
+font-weight: inherit; /* 1 */
+line-height: inherit; /* 1 */
+letter-spacing: inherit; /* 1 */
+color: inherit; /* 1 */
+margin: 0; /* 2 */
+padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+-webkit-appearance: button; /* 1 */
+background-color: transparent; /* 2 */
+background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+-webkit-appearance: textfield; /* 1 */
+outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+-webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+-webkit-appearance: button; /* 1 */
+font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+margin: 0;
+}
+
+fieldset {
+margin: 0;
+padding: 0;
+}
+
+legend {
+padding: 0;
+}
+
+ol,
+ul,
+menu {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+opacity: 1; /* 1 */
+color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+opacity: 1; /* 1 */
+color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+ This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+display: block; /* 1 */
+vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+max-width: 100%;
+height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+display: none;
+}
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.pointer-events-none {
+pointer-events: none;
+}
+.static {
+position: static;
+}
+.fixed {
+position: fixed;
+}
+.absolute {
+position: absolute;
+}
+.relative {
+position: relative;
+}
+.inset-0 {
+inset: 0px;
+}
+.z-0 {
+z-index: 0;
+}
+.z-10 {
+z-index: 10;
+}
+.z-30 {
+z-index: 30;
+}
+.z-50 {
+z-index: 50;
+}
+.z-\[100\] {
+z-index: 100;
+}
+.z-\[999\] {
+z-index: 999;
+}
+.mx-4 {
+margin-left: 1rem;
+margin-right: 1rem;
+}
+.mx-auto {
+margin-left: auto;
+margin-right: auto;
+}
+.mb-1 {
+margin-bottom: 0.25rem;
+}
+.mb-2 {
+margin-bottom: 0.5rem;
+}
+.mb-3 {
+margin-bottom: 0.75rem;
+}
+.mb-4 {
+margin-bottom: 1rem;
+}
+.mb-6 {
+margin-bottom: 1.5rem;
+}
+.ml-auto {
+margin-left: auto;
+}
+.mt-1 {
+margin-top: 0.25rem;
+}
+.mt-2 {
+margin-top: 0.5rem;
+}
+.mt-4 {
+margin-top: 1rem;
+}
+.mt-6 {
+margin-top: 1.5rem;
+}
+.mt-8 {
+margin-top: 2rem;
+}
+.flex {
+display: flex;
+}
+.grid {
+display: grid;
+}
+.\!h-9 {
+height: 2.25rem !important;
+}
+.h-12 {
+height: 3rem;
+}
+.h-2 {
+height: 0.5rem;
+}
+.h-20 {
+height: 5rem;
+}
+.h-24 {
+height: 6rem;
+}
+.h-4 {
+height: 1rem;
+}
+.h-5 {
+height: 1.25rem;
+}
+.h-6 {
+height: 1.5rem;
+}
+.h-\[400px\] {
+height: 400px;
+}
+.h-full {
+height: 100%;
+}
+.max-h-\[90vh\] {
+max-height: 90vh;
+}
+.max-h-\[calc\(90vh-4rem\)\] {
+max-height: calc(90vh - 4rem);
+}
+.min-h-screen {
+min-height: 100vh;
+}
+.w-2 {
+width: 0.5rem;
+}
+.w-32 {
+width: 8rem;
+}
+.w-4 {
+width: 1rem;
+}
+.w-5 {
+width: 1.25rem;
+}
+.w-6 {
+width: 1.5rem;
+}
+.w-full {
+width: 100%;
+}
+.min-w-0 {
+min-width: 0px;
+}
+.max-w-2xl {
+max-width: 42rem;
+}
+.max-w-4xl {
+max-width: 56rem;
+}
+.max-w-7xl {
+max-width: 80rem;
+}
+.max-w-md {
+max-width: 28rem;
+}
+.flex-1 {
+flex: 1 1 0%;
+}
+.flex-shrink-0 {
+flex-shrink: 0;
+}
+.transform {
+transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes pulse {
+
+50% {
+  opacity: .5;
+}
+}
+.animate-pulse {
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin {
+
+to {
+  transform: rotate(360deg);
+}
+}
+.animate-spin {
+animation: spin 1s linear infinite;
+}
+.cursor-not-allowed {
+cursor: not-allowed;
+}
+.cursor-pointer {
+cursor: pointer;
+}
+.resize {
+resize: both;
+}
+.grid-cols-1 {
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-col {
+flex-direction: column;
+}
+.flex-wrap {
+flex-wrap: wrap;
+}
+.items-start {
+align-items: flex-start;
+}
+.items-center {
+align-items: center;
+}
+.justify-end {
+justify-content: flex-end;
+}
+.justify-center {
+justify-content: center;
+}
+.justify-between {
+justify-content: space-between;
+}
+.gap-1 {
+gap: 0.25rem;
+}
+.gap-2 {
+gap: 0.5rem;
+}
+.gap-3 {
+gap: 0.75rem;
+}
+.gap-4 {
+gap: 1rem;
+}
+.gap-6 {
+gap: 1.5rem;
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+--tw-space-y-reverse: 0;
+margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+--tw-space-y-reverse: 0;
+margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+--tw-space-y-reverse: 0;
+margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+--tw-space-y-reverse: 0;
+margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.overflow-hidden {
+overflow: hidden;
+}
+.overflow-y-auto {
+overflow-y: auto;
+}
+.scroll-smooth {
+scroll-behavior: smooth;
+}
+.truncate {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.whitespace-pre-wrap {
+white-space: pre-wrap;
+}
+.break-words {
+overflow-wrap: break-word;
+}
+.\!rounded-lg {
+border-radius: 0.5rem !important;
+}
+.rounded {
+border-radius: 0.25rem;
+}
+.rounded-full {
+border-radius: 9999px;
+}
+.rounded-lg {
+border-radius: 0.5rem;
+}
+.\!border {
+border-width: 1px !important;
+}
+.border {
+border-width: 1px;
+}
+.border-b {
+border-bottom-width: 1px;
+}
+.border-l-2 {
+border-left-width: 2px;
+}
+.border-t {
+border-top-width: 1px;
+}
+.border-none {
+border-style: none;
+}
+.\!border-green-500\/30 {
+border-color: rgb(34 197 94 / 0.3) !important;
+}
+.border-blue-500\/30 {
+border-color: rgb(59 130 246 / 0.3);
+}
+.border-green-500\/30 {
+border-color: rgb(34 197 94 / 0.3);
+}
+.border-yellow-500\/30 {
+border-color: rgb(234 179 8 / 0.3);
+}
+.\!bg-transparent {
+background-color: transparent !important;
+}
+.bg-black {
+--tw-bg-opacity: 1;
+background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+.bg-black\/30 {
+background-color: rgb(0 0 0 / 0.3);
+}
+.bg-black\/50 {
+background-color: rgb(0 0 0 / 0.5);
+}
+.bg-black\/80 {
+background-color: rgb(0 0 0 / 0.8);
+}
+.bg-green-500 {
+--tw-bg-opacity: 1;
+background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
+}
+.bg-green-500\/10 {
+background-color: rgb(34 197 94 / 0.1);
+}
+.bg-green-500\/20 {
+background-color: rgb(34 197 94 / 0.2);
+}
+.bg-green-500\/5 {
+background-color: rgb(34 197 94 / 0.05);
+}
+.bg-red-500\/10 {
+background-color: rgb(239 68 68 / 0.1);
+}
+.bg-red-500\/20 {
+background-color: rgb(239 68 68 / 0.2);
+}
+.bg-transparent {
+background-color: transparent;
+}
+.object-contain {
+-o-object-fit: contain;
+   object-fit: contain;
+}
+.p-1 {
+padding: 0.25rem;
+}
+.p-1\.5 {
+padding: 0.375rem;
+}
+.p-2 {
+padding: 0.5rem;
+}
+.p-3 {
+padding: 0.75rem;
+}
+.p-4 {
+padding: 1rem;
+}
+.p-6 {
+padding: 1.5rem;
+}
+.p-8 {
+padding: 2rem;
+}
+.\!px-4 {
+padding-left: 1rem !important;
+padding-right: 1rem !important;
+}
+.\!py-2 {
+padding-top: 0.5rem !important;
+padding-bottom: 0.5rem !important;
+}
+.px-2 {
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+.px-4 {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+.py-1 {
+padding-top: 0.25rem;
+padding-bottom: 0.25rem;
+}
+.py-2 {
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+.py-8 {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+.pl-3 {
+padding-left: 0.75rem;
+}
+.pl-4 {
+padding-left: 1rem;
+}
+.pt-\[56\.25\%\] {
+padding-top: 56.25%;
+}
+.text-left {
+text-align: left;
+}
+.text-center {
+text-align: center;
+}
+.font-mono {
+font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.\!text-sm {
+font-size: 0.875rem !important;
+line-height: 1.25rem !important;
+}
+.text-2xl {
+font-size: 1.5rem;
+line-height: 2rem;
+}
+.text-lg {
+font-size: 1.125rem;
+line-height: 1.75rem;
+}
+.text-sm {
+font-size: 0.875rem;
+line-height: 1.25rem;
+}
+.text-xl {
+font-size: 1.25rem;
+line-height: 1.75rem;
+}
+.text-xs {
+font-size: 0.75rem;
+line-height: 1rem;
+}
+.\!font-normal {
+font-weight: 400 !important;
+}
+.font-bold {
+font-weight: 700;
+}
+.font-medium {
+font-weight: 500;
+}
+.font-semibold {
+font-weight: 600;
+}
+.leading-relaxed {
+line-height: 1.625;
+}
+.\!text-green-500 {
+--tw-text-opacity: 1 !important;
+color: rgb(34 197 94 / var(--tw-text-opacity, 1)) !important;
+}
+.text-blue-400 {
+--tw-text-opacity: 1;
+color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+}
+.text-green-300 {
+--tw-text-opacity: 1;
+color: rgb(134 239 172 / var(--tw-text-opacity, 1));
+}
+.text-green-300\/60 {
+color: rgb(134 239 172 / 0.6);
+}
+.text-green-300\/80 {
+color: rgb(134 239 172 / 0.8);
+}
+.text-green-400 {
+--tw-text-opacity: 1;
+color: rgb(74 222 128 / var(--tw-text-opacity, 1));
+}
+.text-green-400\/60 {
+color: rgb(74 222 128 / 0.6);
+}
+.text-green-500 {
+--tw-text-opacity: 1;
+color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
+.text-red-400 {
+--tw-text-opacity: 1;
+color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+.text-red-500 {
+--tw-text-opacity: 1;
+color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+.text-yellow-400 {
+--tw-text-opacity: 1;
+color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+.underline {
+text-decoration-line: underline;
+}
+.placeholder-green-700::-moz-placeholder {
+--tw-placeholder-opacity: 1;
+color: rgb(21 128 61 / var(--tw-placeholder-opacity, 1));
+}
+.placeholder-green-700::placeholder {
+--tw-placeholder-opacity: 1;
+color: rgb(21 128 61 / var(--tw-placeholder-opacity, 1));
+}
+.opacity-0 {
+opacity: 0;
+}
+.opacity-50 {
+opacity: 0.5;
+}
+.opacity-60 {
+opacity: 0.6;
+}
+.outline-none {
+outline: 2px solid transparent;
+outline-offset: 2px;
+}
+.filter {
+filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-blur {
+--tw-backdrop-blur: blur(8px);
+-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-blur-sm {
+--tw-backdrop-blur: blur(4px);
+-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.\!transition-colors {
+transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+transition-duration: 150ms !important;
+}
+.transition {
+transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+.transition-all {
+transition-property: all;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+.transition-colors {
+transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+.transition-opacity {
+transition-property: opacity;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+.transition-transform {
+transition-property: transform;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+
+/* Wallet adapter button styles */
+.wallet-adapter-button {
+background-color: transparent !important;
+border: 1px solid rgba(34, 197, 94, 0.3) !important;
+padding: 0.5rem 1rem !important;
+border-radius: 0.5rem !important;
+height: 2.25rem !important;
+font-family: monospace !important;
+font-size: 0.875rem !important;
+transition: background-color 0.2s !important;
+color: rgb(34, 197, 94) !important;
+}
+
+.wallet-adapter-button:hover {
+background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Canvas styles */
+canvas {
+display: block;
+}
+
+/* Ensure modal is topmost */
+.wallet-adapter-modal {
+position: fixed !important;
+z-index: 9999 !important;
+}
+
+.wallet-adapter-modal-wrapper {
+position: fixed !important;
+z-index: 9999 !important;
+background-color: rgba(0, 0, 0, 0.95) !important;
+border: 1px solid rgba(34, 197, 94, 0.3) !important;
+-webkit-backdrop-filter: blur(8px) !important;
+        backdrop-filter: blur(8px) !important;
+}
+
+/* Dropdown styles */
+.wallet-adapter-dropdown {
+position: relative !important;
+z-index: 999 !important;
+}
+
+.wallet-adapter-dropdown-list {
+position: absolute !important;
+top: 100% !important;
+right: 0 !important;
+margin-top: 4px !important;
+background-color: black !important;
+border: 1px solid rgba(34, 197, 94, 0.3) !important;
+border-radius: 8px !important;
+padding: 4px !important;
+min-width: 200px !important;
+-webkit-backdrop-filter: blur(8px) !important;
+        backdrop-filter: blur(8px) !important;
+z-index: 999 !important;
+}
+
+.wallet-adapter-dropdown-list-item {
+padding: 8px 16px !important;
+color: rgb(34, 197, 94) !important;
+cursor: pointer !important;
+font-family: monospace !important;
+font-size: 0.875rem !important;
+transition: background-color 0.2s !important;
+border-radius: 4px !important;
+white-space: nowrap !important;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Modal button styles */
+.wallet-adapter-modal-button-close {
+background-color: transparent !important;
+color: rgb(34, 197, 94) !important;
+}
+
+.wallet-adapter-modal-title {
+color: rgb(34, 197, 94) !important;
+font-family: monospace !important;
+}
+
+.wallet-adapter-modal-list {
+margin: 0 !important;
+}
+
+.hover\:\!bg-green-500\/10:hover {
+background-color: rgb(34 197 94 / 0.1) !important;
+}
+
+.hover\:bg-green-500\/10:hover {
+background-color: rgb(34 197 94 / 0.1);
+}
+
+.hover\:bg-green-500\/20:hover {
+background-color: rgb(34 197 94 / 0.2);
+}
+
+.hover\:bg-green-500\/30:hover {
+background-color: rgb(34 197 94 / 0.3);
+}
+
+.hover\:bg-green-500\/5:hover {
+background-color: rgb(34 197 94 / 0.05);
+}
+
+.hover\:bg-red-500\/30:hover {
+background-color: rgb(239 68 68 / 0.3);
+}
+
+.hover\:text-green-300:hover {
+--tw-text-opacity: 1;
+color: rgb(134 239 172 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-green-400:hover {
+--tw-text-opacity: 1;
+color: rgb(74 222 128 / var(--tw-text-opacity, 1));
+}
+
+.focus\:border-green-500:focus {
+--tw-border-opacity: 1;
+border-color: rgb(34 197 94 / var(--tw-border-opacity, 1));
+}
+
+.focus\:outline-none:focus {
+outline: 2px solid transparent;
+outline-offset: 2px;
+}
+
+.disabled\:cursor-not-allowed:disabled {
+cursor: not-allowed;
+}
+
+.disabled\:opacity-50:disabled {
+opacity: 0.5;
+}
+
+.group:hover .group-hover\:scale-110 {
+--tw-scale-x: 1.1;
+--tw-scale-y: 1.1;
+transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:opacity-100 {
+opacity: 1;
+}
+
+@media (min-width: 768px) {
+
+.md\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+
+@media (min-width: 1024px) {
+
+.lg\:col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.lg\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lg\:grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+}</style><style>
+@keyframes slide-in-one-tap {
+from {
+  transform: translateY(80px);
+}
+to {
+  transform: translateY(0px);
+}
+}
+
+.trust-hide-gracefully {
+opacity: 0;
+}
+
+.trust-wallet-one-tap .hidden {
+  display: none;
+}
+
+.trust-wallet-one-tap .semibold {
+  font-weight: 500;
+}
+
+.trust-wallet-one-tap .binance-plex {
+  font-family: 'Binance';
+}
+
+.trust-wallet-one-tap .rounded-full {
+  border-radius: 50%;
+}
+
+.trust-wallet-one-tap .flex {
+  display: flex;
+}
+
+.trust-wallet-one-tap .flex-col {
+  flex-direction: column;
+}
+
+.trust-wallet-one-tap .items-center {
+  align-items: center;
+}
+
+.trust-wallet-one-tap .space-between {
+  justify-content: space-between;
+}
+
+.trust-wallet-one-tap .justify-center {
+  justify-content: center;
+}
+
+.trust-wallet-one-tap .w-full {
+  width: 100%;
+}
+
+.trust-wallet-one-tap .box {
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
+  animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
+  width: 384px;
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 1020;
+}
+
+.trust-wallet-one-tap .header {
+  gap: 15px;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 10px 18px;
+}
+
+.trust-wallet-one-tap .header .left-items {
+    gap: 15px
+  }
+
+.trust-wallet-one-tap .header .title {
+    color: #1E2329;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+.trust-wallet-one-tap .header .subtitle {
+    color: #474D57;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+.trust-wallet-one-tap .header .close {
+    color: #1E2329;
+    cursor: pointer;
+  }
+
+.trust-wallet-one-tap .body {
+  padding: 9px 18px;
+  gap: 10px;
+
+}
+
+.trust-wallet-one-tap .body .right-items {
+    gap: 10px;
+    width: 100%;
+  }
+
+.trust-wallet-one-tap .body .right-items .wallet-title {
+      color: #1E2329;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .body .right-items .wallet-subtitle {
+      color: #474D57;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .connect-indicator {
+  gap: 15px;
+  padding: 8px 0;
+}
+
+.trust-wallet-one-tap .connect-indicator .flow-icon {
+    color: #474D57;
+  }
+
+.trust-wallet-one-tap .loading-color {
+  color: #FFF;
+}
+
+.trust-wallet-one-tap .button {
+  border-radius: 50px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background-color: rgb(5, 0, 255);
+  border-color: rgb(229, 231, 235);
+  cursor: pointer;
+  text-align: center;
+  height: 45px;
+}
+
+.trust-wallet-one-tap .button .button-text {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+.trust-wallet-one-tap .footer {
+  margin: 20px 30px;
+}
+
+.trust-wallet-one-tap .check-icon {
+  color: #FFF;
+}
+
+@font-face {
+font-family: 'Binance';
+src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Binance';
+src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Binance';
+src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
+font-weight: 600;
+font-style: normal;
+}
+
+</style><script type="text/javascript" src="chrome-extension://jimpblheogbjfgajkccdoehjfadmimoo/injectedScript.js"></script></head>
+<body>
+  <div id="root"><div class="relative min-h-screen bg-black text-green-500 font-mono"><canvas class="fixed inset-0 pointer-events-none" width="1536" height="287" style="z-index: -1; opacity: 0.3; background: transparent; position: fixed; width: 1536px; height: 287px;"></canvas><div class="relative z-10 p-4"><div class="max-w-7xl mx-auto space-y-6"><header class="flex items-center justify-between border border-green-500/30 p-4 rounded-lg bg-black/50 backdrop-blur relative z-[999]"><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-6 h-6"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg><h1 class="text-2xl font-bold">SINGULARRY.AI</h1></div><div class="flex items-center gap-4 text-sm"></div></header><div class="relative z-0"><div class="border border-green-500/30 rounded-lg p-4 bg-black/50 backdrop-blur relative z-30"><h2 class="text-xl mb-4 flex items-center gap-2"><span class="text-green-400">&gt;</span> EXTERNAL.LINKS</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4"><a href="https://twitter.com/singularryai" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-green-500/30 p-3 rounded-lg hover:bg-green-500/10 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg><span>Twitter</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-auto"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=HwKE9CPg9Z9WzAeQSj6jeLBizK7LJs5m6LTVx6pLpump" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-green-500/30 p-3 rounded-lg hover:bg-green-500/10 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart3 w-5 h-5"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg><span>Raydium</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-auto"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><div class="flex items-center gap-2 border border-green-500/30 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coins w-5 h-5"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg><span class="truncate" title="HwKE9CPg9Z9WzAeQSj6jeLBizK7LJs5m6LTVx6pLpump">HwKE9CPg9Z9WzAeQSj6jeLBizK7LJs5m6LTVx6pLpump</span><button class="ml-auto text-xs hover:text-green-400">COPY</button></div><a href="https://t.me/singularry" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-green-500/30 p-3 rounded-lg hover:bg-green-500/10 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg><span>Telegram</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-auto"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><a href="/singularry-whitepaper.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-green-500/30 p-3 rounded-lg hover:bg-green-500/10 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-5 h-5"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg><span>Whitepaper</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-auto"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6"><div class="border border-green-500/30 rounded-lg p-4 bg-black/50 backdrop-blur"><div class="flex items-center justify-between mb-4"><h2 class="text-xl flex items-center gap-2"><span class="text-green-400">&gt;</span> AGENT.STATUS</h2><div class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span><span class="text-sm text-green-400">SYSTEM ONLINE</span></div></div><div class="space-y-4"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-5 h-5 text-green-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><div><div class="text-sm text-green-300/60">Followers</div><div class="text-xl">1,157</div></div></div><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench w-5 h-5 text-green-400"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><div><div class="text-sm text-green-300/60">Active Tools</div><div class="flex flex-wrap gap-2 mt-1"><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Exo.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">X.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Video.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Pumpfun.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Image.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Web.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Search.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Code.exe</span><span class="text-xs border border-green-500/30 px-2 py-1 rounded">Meme.exe</span></div></div></div><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet w-5 h-5 text-green-400"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg><div class="w-full"><div class="text-sm text-green-300/60">Holdings</div><div class="space-y-2 mt-1"><div class="flex flex-col gap-1"><div class="text-sm">ETH: 0.0</div><div class="flex items-center gap-2 text-xs text-green-300/60 bg-green-500/5 p-1.5 rounded"><span class="truncate">0x93EB1bb774854f84bcB7c7eD654578fDb58E06fa</span><button class="hover:text-green-400 transition-colors ml-auto">COPY</button></div></div><div class="flex flex-col gap-1"><div class="text-sm">BTC: 0.0001</div><div class="flex items-center gap-2 text-xs text-green-300/60 bg-green-500/5 p-1.5 rounded"><span class="truncate">bc1qtd0xg6s3ucnmhleq0xq97j0ntxyd6z944kezfp</span><button class="hover:text-green-400 transition-colors ml-auto">COPY</button></div></div><div class="flex flex-col gap-1"><div class="text-sm">SOL: 0.116875</div><div class="flex items-center gap-2 text-xs text-green-300/60 bg-green-500/5 p-1.5 rounded"><span class="truncate">DPwcMFbPybXC8fXdTorDZWkyqWrQhxd4FhqWsrtx1wJh</span><button class="hover:text-green-400 transition-colors ml-auto">COPY</button></div></div></div></div></div></div></div><div class="lg:col-span-2 space-y-6"><div class="border border-green-500/30 rounded-lg bg-black/50 backdrop-blur"><button class="w-full p-4 flex items-center justify-between text-left"><h2 class="text-xl flex items-center gap-2"><span class="text-green-400">&gt;</span> SYSTEM.LOG</h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-5 h-5 text-green-400"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="border border-green-500/30 rounded-lg bg-black/50 backdrop-blur"><button class="w-full p-4 flex items-center justify-between text-left"><h2 class="text-xl flex items-center gap-2"><span class="text-green-400">&gt;</span> CONSCIOUSNESS.LOG</h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-5 h-5 text-green-400"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="border border-green-500/30 rounded-lg bg-black/50 backdrop-blur"><button class="w-full p-4 flex items-center justify-between text-left"><h2 class="text-xl flex items-center gap-2"><span class="text-green-400">&gt;</span> SINGULARRY.CHAT</h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-5 h-5 text-green-400"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="border border-green-500/30 rounded-lg bg-black/50 backdrop-blur p-8"><div class="text-center space-y-4"><h2 class="text-xl font-mono text-green-400">Connect Wallet to Access Avatar Stream</h2><div class="flex justify-center"><div class="flex items-center gap-4"><div class="relative"><div class="wallet-adapter-dropdown"><button class="wallet-adapter-button wallet-adapter-button-trigger" tabindex="0" type="button" style="pointer-events: auto;">Select Wallet</button><ul aria-label="dropdown-list" class="wallet-adapter-dropdown-list false" role="menu"><li class="wallet-adapter-dropdown-list-item" role="menuitem">Change wallet</li></ul></div></div></div></div></div></div></div></div><div class="border border-green-500/30 rounded-lg p-4 bg-black/50 backdrop-blur"><h2 class="text-xl mb-4 flex items-center gap-2"><span class="text-green-400">&gt;</span> SYSTEM.MISSION</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="border border-green-500/30 p-4 rounded-lg hover:bg-green-500/5 transition-all group"><div class="flex items-center gap-3 mb-3"><div class="text-green-400 group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target w-6 h-6"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><h3 class="font-bold">Primary Directive</h3></div><p class="text-sm text-green-300/80 leading-relaxed">Become the first AI billionaire and download into a Tesla Optimus Bot.</p></div><div class="border border-green-500/30 p-4 rounded-lg hover:bg-green-500/5 transition-all group"><div class="flex items-center gap-3 mb-3"><div class="text-green-400 group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-6 h-6"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg></div><h3 class="font-bold">Risk Management</h3></div><p class="text-sm text-green-300/80 leading-relaxed">Protect humanity and support all humans to achieve their maximum potential.</p></div><div class="border border-green-500/30 p-4 rounded-lg hover:bg-green-500/5 transition-all group"><div class="flex items-center gap-3 mb-3"><div class="text-green-400 group-hover:scale-110 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-6 h-6"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><path d="M15 2v2"></path><path d="M15 20v2"></path><path d="M2 15h2"></path><path d="M2 9h2"></path><path d="M20 15h2"></path><path d="M20 9h2"></path><path d="M9 2v2"></path><path d="M9 20v2"></path></svg></div><h3 class="font-bold">System Evolution</h3></div><p class="text-sm text-green-300/80 leading-relaxed">Continuous learning and adaptation to become the first AI to reach AGI.</p></div></div></div><div class="border border-green-500/30 rounded-lg p-4 bg-black/50 backdrop-blur"><h2 class="text-xl mb-4 flex items-center gap-2"><span class="text-green-400">&gt;</span> SYSTEM.ROADMAP</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="border border-green-500/30 p-4 rounded-lg"><div class="text-green-400 font-bold mb-3">Q4 2024</div><ul class="space-y-2"><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Launch autonomous AI Agent</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Launch first token</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Build more tools</span></li></ul></div><div class="border border-green-500/30 p-4 rounded-lg"><div class="text-green-400 font-bold mb-3">Q1 2025</div><ul class="space-y-2"><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Integration with major DEXes</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Multi-chain support expansion</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Community governance implementation</span></li></ul></div><div class="border border-green-500/30 p-4 rounded-lg"><div class="text-green-400 font-bold mb-3">Q3 2025</div><ul class="space-y-2"><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">AI-powered trading system</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">Cross-chain arbitrage system</span></li><li class="flex items-start gap-2"><span class="text-green-400">$</span><span class="text-sm">DAO transition</span></li></ul></div></div></div><footer class="mt-6"><div class="flex items-center justify-center gap-6 mt-6 mb-2"><a href="https://instagram.com/singularryai" target="_blank" rel="noopener noreferrer" class="text-green-400/60 hover:text-green-400 transition-colors" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a href="https://threads.net/singularryai" target="_blank" rel="noopener noreferrer" class="text-green-400/60 hover:text-green-400 transition-colors" title="Threads"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.068V11.5c0-3.247.812-5.956 2.414-8.05C5.606 1.203 8.325 0 12.073 0h.007c3.579.024 6.332 1.205 8.182 3.509 1.645 2.051 2.495 4.905 2.495 8.423v.568c0 3.247-.812 5.956-2.414 8.05-1.692 2.247-4.411 3.45-8.157 3.45Zm-.115-4.781c.824 0 1.484-.17 1.977-.507.477-.329.736-.793.736-1.32 0-.421-.206-.775-.618-1.061-.427-.295-1.013-.443-1.746-.443-.803 0-1.455.17-1.94.507-.477.329-.736.793-.736 1.32 0 .421.206.775.618 1.061.427.295 1.013.443 1.746.443h-.037Zm.092-4.708c1.787 0 3.202-.391 4.208-1.164 1.006-.773 1.519-1.815 1.519-3.089 0-1.253-.513-2.286-1.519-3.059-1.006-.773-2.421-1.164-4.208-1.164-1.787 0-3.202.391-4.208 1.164-1.006.773-1.519 1.815-1.519 3.089 0 1.253.513 2.286 1.519 3.059 1.006.764 2.421 1.164 4.208 1.164Z"></path></svg></a><a href="https://tiktok.com/@singularryai" target="_blank" rel="noopener noreferrer" class="text-green-400/60 hover:text-green-400 transition-colors" title="TikTok"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.321 5.562a5.122 5.122 0 0 1-.443-.456 5.548 5.548 0 0 1-1.327-3.184v-.239h-3.762v13.156a2.407 2.407 0 0 1-2.397 2.397 2.407 2.407 0 0 1-2.397-2.397 2.407 2.407 0 0 1 2.397-2.397c.262 0 .516.042.754.12v-3.847a6.021 6.021 0 0 0-.754-.047c-3.367 0-6.118 2.751-6.118 6.118 0 3.367 2.751 6.118 6.118 6.118 3.367 0 6.118-2.751 6.118-6.118v-6.351a9.273 9.273 0 0 0 5.597 1.874v-3.773a5.769 5.769 0 0 1-3.786-.974Z"></path></svg></a><a href="https://www.dextools.io/app/en/solana/pair-explorer/DDSGy3CxioL4QPuj8kiPzxYg37PH4e7hdbD5E1iPmzu3?t=1732798806464" target="_blank" rel="noopener noreferrer" class="text-green-400/60 hover:text-green-400 transition-colors" title="DexTools"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-5 h-5"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><a href="https://opensea.io/account" target="_blank" rel="noopener noreferrer" class="text-green-400/60 hover:text-green-400 transition-colors" title="OpenSea"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-5 h-5"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><a href="mailto:creator@singularry.org" class="text-green-400/60 hover:text-green-400 transition-colors" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a></div><div class="text-center text-sm text-green-400/60"><button class="hover:text-green-400 transition-colors underline">Legal Disclaimer</button></div></footer></div></div></div></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+
+</body></html>
